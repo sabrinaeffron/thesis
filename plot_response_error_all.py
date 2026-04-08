@@ -10,8 +10,6 @@ seeds = ["1000", "2000", "3000", "4000", "5000"]
 # loss_type = "Mean absolute error"
 loss_type = "Cross entropy loss"
 
-# steps = list(range(0, 1601, 100))
-# steps.append(1632)
 steps = list(range(100, 6500, 400))
 steps.insert(0, 0)
 steps.append(6522)
