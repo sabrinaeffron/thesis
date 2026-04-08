@@ -23,10 +23,7 @@ dynamo.config.disable = True
 # olmo-3-7b
 # Llama-3.1-8B
 model_dir_name = "Llama-3.1-8B" 
-seed = "5000" # 3000, 2000, 1000
-
-# nums = list(range(100, 1601, 100))
-# nums.append(1632)
+seed = "5000"
 
 nums = list(range(100, 6500, 400))
 nums.append(6522)

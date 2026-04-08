@@ -14,7 +14,7 @@ os.environ["HF_HUB_OFFLINE"] = "1"
 os.environ["WANDB_DISABLED"] = "true"
 os.environ["DISABLE_MMR_VISION"] = "1"
 
-# just load model
+# load model
 model_dir = "/scratch/gpfs/GRIFFITHS/se1854/models/gemma-2-9b-it"
 # Meta-Llama-3.1-8B-Instruct
 # olmo-3-7b-instruct
@@ -78,25 +78,11 @@ def model_completion(prompt):
 df = pd.read_csv(test_folder)
 outputs, pred_A, pred_B, bce, sq_err = [], [], [], [], []
 for _, row in df.iterrows():
-    # already applied formatting in creating dataset
-    # chat = [
-    #         # {'role': 'system', 'content': ''},
-    #         {'role': 'user', 'content': text},
-    #         ]  # create conversation, input user question
-    # prompt = tokenizer.apply_chat_template(chat, tokenize=False) 
-    # output_text = model_completion(prompt) # add start of turn model
 
     output_text = model_completion(row["sft_text"])
-    # print(text)
     print('='*10)
     print(output_text)
     outputs.append(output_text)
-
-    # decoded = tokenizer.batch_decode(out, skip_special_tokens=True)[0]
-    # completion = decoded[len(text):].strip()
-    # outputs.append(completion)
-    # print(completion)
-    # print('\n')
 
     # extract json from generated text, convert text to real number from json
     try: 
