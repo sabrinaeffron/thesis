@@ -3,9 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as sp
 
-# steps = list(range(0, 1601, 100))
-# steps.append(1632)
-
 steps = list(range(100, 6500, 400))
 steps.insert(0, 0)
 steps.append(6522)
@@ -26,7 +23,6 @@ for i in range(len(models)):
                 file = "outputs/"+models[i]+"/test_results_"+model_base[i]+"_swap"+s+"_"+str(step)+".csv"
             df = pd.read_csv(file)
 
-            # mse = np.nanmean((df["aRate"] - df["pred_A"] / 100.0) ** 2)
             bce = np.nanmean(df["bce"])
             nums.append(bce)
 
