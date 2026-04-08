@@ -17,9 +17,6 @@ PROMPT2 = "\n\nAfter viewing the payoff matrix, you must choose between Option A
 
 ANS = "Option "
 
-# nums = list(range(0, 1601, 100))
-# nums.append(1632)
-
 nums = list(range(100, 6500, 400))
 nums.insert(0, 0)
 nums.append(6522)
@@ -29,7 +26,7 @@ nums.append(6522)
 # olmo-3-7b
 # Llama-3.1-8B
 model_dir_name = "Qwen-7B-SFT"
-seed = "5000" # 3000, 2000, 1000
+seed = "5000"
 device = "cuda"
 
 print(model_dir_name)
@@ -66,7 +63,7 @@ def get_choice_logits(prompt, model):
     # logits for next token prediction
     next_token_logits = outputs.logits[:, -1, :]  # (1, vocab)
 
-    # token IDs for "0" and "1"
+    # token IDs for "A" and "B"
     token_0 = tokenizer.encode("A", add_special_tokens=False)[0]
     token_1 = tokenizer.encode("B", add_special_tokens=False)[0]
 
