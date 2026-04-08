@@ -18,7 +18,6 @@ elif model == "llama-3.1-8b":
     model_base = "llama"
     model_name = "Llama-3.1-8B"
 
-# seeds = ["1000_2", "2000_2", "3000_2"]
 seed = "1000"
 
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12,5))

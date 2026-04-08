@@ -17,12 +17,10 @@ elif model == "llama-3.1-8b":
     model_base = "llama"
     model_name = "Llama-3.1-8B"
 
-# seeds = ["1000_2", "2000_2", "3000_2"]
 seed = "1000"
 
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12,5))
 
-# before_file = "outputs/"+model+"/test_results_"+model_base+"_final_0.csv"
 before_file = "outputs/"+model+"/test_results_"+model_base+"_swap_0.csv"
 before_df = pd.read_csv(before_file)
 before = before_df["pred_A"]
