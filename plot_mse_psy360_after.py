@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as sp
 
-# original models
+# original LLMs
 models = [
     "gpt-5",
     "o3-mini",
@@ -34,6 +34,7 @@ for model in models:
     lo_vals.append(lo)
     hi_vals.append(hi)
 
+# untrained LLMs
 folders = [
     ("Qwen-2.5-7B-Instruct (original)",  "outputs/qwen-2.5-7b/test_results_qwen_final_0.csv"),
     ("Gemma-2-9B-Instruct (original)",   "outputs/gemma-2-9b/test_results_gemma_final_0.csv"),
@@ -59,7 +60,7 @@ for _, path in folders:
 
 llm_names = models + [name for name, _ in folders]
 
-# fine-tuned models
+# fine-tuned LLMs
 models_train = ["gemma-2-9b", "qwen-2.5-7b", "olmo-3-7b", "llama-3.1-8b"]
 model_base_train = ["gemma", "qwen", "olmo", "llama"]
 seeds = ["1000", "2000", "3000", "4000", "5000"]

@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as sp
 
-# original models
+# original LLMs
 models = [
     "gpt-5",
     "o3-mini",
@@ -34,6 +34,7 @@ for model in models:
     lo_vals.append(lo)
     hi_vals.append(hi)
 
+# untrained LLMs
 folders = [
     ("Qwen-2.5-7B-Instruct",  "outputs/qwen-2.5-7b/test_results_qwen_final_0.csv"),
     ("Gemma-2-9B-Instruct",   "outputs/gemma-2-9b/test_results_gemma_final_0.csv"),
