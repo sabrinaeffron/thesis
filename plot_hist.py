@@ -19,13 +19,13 @@ elif model == "llama-3.1-8b":
 
 seed = "1000"
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12,5))
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12,5), sharey=True)
 
-before_file = "outputs/"+model+"/test_results_"+model_base+"_swap_0.csv"
+before_file = "outputs/"+model+"/test_results_"+model_base+"_final_0.csv"
 before_df = pd.read_csv(before_file)
 before = before_df["pred_A"]
 
-after_file = "outputs/"+model+"/test_results_"+model_base+"_swap"+seed+"_6522.csv"
+after_file = "outputs/"+model+"/test_results_"+model_base+"_final"+seed+"_2_1632.csv"
 after_df = pd.read_csv(after_file)
 after = after_df["pred_A"]
 
@@ -41,6 +41,7 @@ ax1.set_title("Response frequencies before training for " + model_name)
 ax2.set_ylabel("Frequency")
 ax2.set_xlabel("Response value")
 ax2.set_title("Response frequencies after training for " + model_name)
+ax2.tick_params(labelleft=True)
 
 plt.tight_layout()
 plt.show()

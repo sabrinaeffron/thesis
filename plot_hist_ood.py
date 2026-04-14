@@ -35,6 +35,9 @@ bins = list(np.arange(0.0, 1.1, 0.1))
 ax1.hist(before, bins=bins)
 ax2.hist(after, bins=bins)
 
+ax1.set_ylim(0, 1000)
+ax2.set_ylim(0, 1000)
+
 ax1.set_ylabel("Frequency")
 ax1.set_xlabel("Response value")
 ax1.set_title("Probability of choosing Option A before training for " + model_name)
