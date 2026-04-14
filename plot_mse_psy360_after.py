@@ -92,8 +92,8 @@ for i in range(len(models_train)):
     hi_vals.append(np.nanmean(hi_nums))
 
 # models from Zhu's research
-cogsci_names = ["Random", "Nash", "Best Cognitive", "MLP"]
-cogsci_mse   = [0.0875, 0.1625, 0.0096, 0.0073]
+cogsci_names = ["Random", "Nash", "Best Cognitive without NNs", "Best Cognitive with NNs", "MLP"]
+cogsci_mse   = [0.0875, 0.1625, 0.0181, 0.0096, 0.0073]
 
 all_names = llm_names +llm_names_train + cogsci_names 
 all_mse = mse_values + cogsci_mse

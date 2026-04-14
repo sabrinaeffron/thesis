@@ -61,8 +61,8 @@ for _, path in folders:
 llm_names = models + [name for name, _ in folders]
 
 # models from Zhu's research
-cogsci_names = ["Random", "Nash", "Best Cognitive", "MLP"]
-cogsci_mse   = [0.0875, 0.1625, 0.0096, 0.0073]
+cogsci_names = ["Random", "Nash", "Best Cognitive without NNs", "Best Cognitive with NNs", "MLP"]
+cogsci_mse   = [0.0875, 0.1625, 0.0181, 0.0096, 0.0073]
 
 all_names = llm_names + cogsci_names 
 all_mse = mse_values + cogsci_mse
